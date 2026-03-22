@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinder Visualizer</title>
+    <link rel="icon" href="./assets/icon/path.png" type="image/png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/utility.css">
+</head>
+<body>
+    <div class="template">
+        <header>
+            <nav>
+                <a href="" class="logo">PathFinding Visualizer</a>
+                <div class="visualizerBtn" id="VisualizeButton">Visualize</div>
+
+                <ul class="navMenu">
+                    <li id="clearPathBtn"><a href="#">Clear Path</a></li>
+                    <li id="clearBoardBtn"><a href="#">Clear Board</a></li>
+                    <li id="generateMazeBtn"><a href="#">Generate Maze</a></li>
+                    <li class="dropBox ">
+                        <a href="#">Pixel <span class="caret"></span></a>
+                        <ul class="dropMenu">
+                            <li><a href="#">14px</a></li>
+                            <li><a href="#">16px</a></li>
+                            <li><a href="#">18px</a></li>
+                            <li><a href="#">20px</a></li>
+                            <li class="active"><a href="#">22px</a></li>
+                            <li><a href="#">24px</a></li>
+                            <li><a href="#">26px</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropBox">
+                        <a href="#">Speed <span class="caret"></span></a>
+                        <ul class="dropMenu">
+                            <li><a href="#">Slow</a></li>
+                            <li class="active"><a href="#">Normal</a></li>
+                            <li><a href="#">Fast</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropBox ">
+                        <a href="#">Algorithms <span class="caret"></span></a>
+                        <ul class="dropMenu">
+                            <li><a href="#">DFS</a></li>
+                            <li class="active"><a href="#">BFS</a></li>
+                            <li><a href="#">Dijkstra's Algorithm</a></li>
+                            <li><a href="#">Greedy Algorithm</a></li>
+                            <li><a href="#">A* Algorithm</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <ul class="guideBar">
+                <li>
+                    <span class="icon source"></span>
+                    <span class="text">Start</span>
+                </li>
+                <li>
+                    <span class="icon target"></span>
+                    <span class="text">Target</span>
+                </li>
+                <li>
+                    <span class="icon unvisited"></span>
+                    <span class="text">Unvisited</span>
+                </li>
+                <li>
+                    <span class="icon visited"></span>
+                    <span class="text">Visited</span>
+                </li>
+                <li>
+                    <span class="icon wall"></span>
+                    <span class="text">Wall</span>
+                </li>
+                <li>
+                    <span class="icon path"></span>
+                    <span class="text">Shortest Path</span>
+                </li>
+            </ul>
+        </header>
+        <div id="board">
+
+        </div>
+    </div>   
+</body>
+
+<script type="module" src="js/app.js"></script>
+</html>

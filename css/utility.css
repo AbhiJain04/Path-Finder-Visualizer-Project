@@ -1,0 +1,112 @@
+:root {
+    --clr-navy: #34495e;
+    --primary-clr: #6563ff;
+    --secondary-clr: #c4c3fc;
+    --light-line: #e4e2ed;
+    --cell-width: 22px;
+    --light-text: #686673;
+    --light-dot: #adaac0;
+    --bg-primary: #fff;
+    --bg-secondary: #fff;
+    --primary-foreground: #000;
+    --wall-clr: rgb(12, 53, 71);
+    --visited-clr: rgba(0, 195, 255, 0.85);
+    --path-clr: rgb(255, 254, 106);
+    --text-light: #515067;
+}
+
+.caret{
+    display: block;
+    aspect-ratio: 1;
+    width: 14px;
+    background: url(../assets/icon/caret-down.svg);
+}
+
+.wall{
+    background-color: var(--clr-navy);
+    animation: wallAnimation 0.5s ease-out forwards;
+}
+
+.source{
+    background: url(../assets/icon/source.svg);
+}
+
+.target{
+    background: url(../assets/icon/target.svg);
+}
+
+.icon{
+    aspect-ratio: 1;
+    width: 20px;
+}
+
+.visited{
+    background-color: var(--visited-clr);
+    animation: visitedAnimation 1s ease-out forwards;
+}
+
+.path{
+    background-color: var(--path-clr);
+    animation: pathAnimation 1s ease-out forwards;
+}
+
+.unvisited{
+    background-color: white;
+    border: 1px solid var(--light-line);
+}
+
+
+@keyframes visitedAnimation{
+    0% {
+        transform: scale(0.3);
+        background-color: rgba(0, 0, 80, 0.8);
+        border-radius: 100%;
+        box-shadow: 0 0 6px rgba(0, 200, 255, 0.4);
+    }
+
+    40% {
+        background-color: rgba(0, 90, 255, 0.85);
+        box-shadow: 0 0 12px rgba(0, 90, 255, 0.6);
+    }   
+    70% {
+        transform: scale(1.05);
+        background-color: rgba(0, 255, 180, 0.9);
+        box-shadow: 0 0 20px rgba(0, 255, 180, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--visited-clr);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
+    }
+}
+
+
+@keyframes pathAnimation{
+    0% {
+        transform: scale(0.6);
+        background-color: var(--path-clr);
+    }
+    50% {
+        transform: scale(1);
+        background-color: var(--path-clr);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--path-clr);
+    }
+}
+
+@keyframes wallAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: var(--wall-clr);
+    }
+    50% {
+        transform: scale(1);
+        background-color: var(--wall-clr);
+    }
+    100% {
+        transform: scale(1);
+        background-color: var(--wall-clr);
+    }
+}
