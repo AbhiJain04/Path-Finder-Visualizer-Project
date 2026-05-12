@@ -13,6 +13,7 @@ A clean, interactive web app built with pure JavaScript — no frameworks, no li
 
 - 🎨 **Interactive grid** — paint walls with click-and-drag, move start/end points freely
 - ⚡ **5 algorithms** — watch each one explore differently on the same grid
+- 🪨 **Weighted nodes** — right-click to place weight nodes (cost 5), Dijkstra and A* route around them while BFS ignores them
 - 📊 **Live stats** — nodes visited, path length and time shown after every run
 - 🌀 **Maze generation** — instantly generate random mazes to test algorithms
 - 🐢 **Speed control** — slow, normal, or fast animation speed
@@ -94,6 +95,7 @@ npm test
 - **DFS is not a pathfinder** — DFS finds *a* path but never the *shortest* path, which becomes visually obvious when you run it side by side with BFS
 - **Priority queues matter** — implementing a min-heap from scratch for Dijkstra, A* and Greedy taught me why O(E log V) beats O(E·V) for dense graphs
 - **CI/CD in practice** — setting up GitHub Actions to auto-deploy on every push to main
+- **Weighted nodes expose algorithm differences** — adding weight nodes makes the difference between BFS and Dijkstra visually obvious. BFS cuts straight through weights (ignores cost), while Dijkstra routes around them to find the lowest-cost path — the same concept that makes Dijkstra essential for real-world navigation like Google Maps
 
 ---
 
