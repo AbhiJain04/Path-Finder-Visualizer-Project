@@ -2,11 +2,7 @@ import { PriorityQueue, heuristicValue } from "../core/util.js";
 import { getPath, isValid } from "../core/util.js";
 import { sourceCoordinate, targetCoordinate, matrix, row, col } from "../core/board.js";
 import { visitedCell } from "../app.js";
-
-//-----------------------------------------------//
-//  A* Algorithm
-//-----------------------------------------------//
-
+import { getWeight } from "../core/interaction.js"; // NEW
 
 export function AStarAlgorithm(){
     const queue = new PriorityQueue();
@@ -24,12 +20,11 @@ export function AStarAlgorithm(){
     }
 
     gScore[sourceCoordinate.x][sourceCoordinate.y] = 0;
-
     queue.push({coordinate : sourceCoordinate, cost : 0 + heuristicValue(sourceCoordinate)});
     queued.add(`${sourceCoordinate.x}-${sourceCoordinate.y}`);
 
     while(!queue.isEmpty()){
-        const {coordinate : frontElement}= queue.pop();
+        const {coordinate : frontElement} = queue.pop();
         visitedCell.push(matrix[frontElement.x][frontElement.y]);
 
         if(frontElement.x === targetCoordinate.x && frontElement.y === targetCoordinate.y){
@@ -40,16 +35,16 @@ export function AStarAlgorithm(){
         visited.add(`${frontElement.x}-${frontElement.y}`);
 
         const neighbourOfFrontElement = [
-            {x: frontElement.x - 1, y:frontElement.y}, //up
-            {x: frontElement.x, y:frontElement.y + 1}, //right
-            {x: frontElement.x + 1, y:frontElement.y}, //down
-            {x: frontElement.x, y:frontElement.y- 1}, //left
+            {x: frontElement.x - 1, y: frontElement.y},
+            {x: frontElement.x,     y: frontElement.y + 1},
+            {x: frontElement.x + 1, y: frontElement.y},
+            {x: frontElement.x,     y: frontElement.y - 1},
         ]
-            
+
         for(const neighbour of neighbourOfFrontElement){
             const currentNeighbour = `${neighbour.x}-${neighbour.y}`;
             if(isValid(neighbour.x, neighbour.y) && !visited.has(currentNeighbour) && !queued.has(currentNeighbour) && !matrix[neighbour.x][neighbour.y].classList.contains('wall')){
-                const edgeWeight = 1;
+                const edgeWeight = getWeight(matrix[neighbour.x][neighbour.y]); // CHANGED
                 const gScoreToNeighbour = gScore[frontElement.x][frontElement.y] + edgeWeight;
                 const fScore = gScoreToNeighbour + heuristicValue(neighbour);
 
@@ -61,6 +56,5 @@ export function AStarAlgorithm(){
                 }
             }
         }
-        console.log('AStar Alogrithm visualization complete');
     }
 }
