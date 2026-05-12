@@ -248,3 +248,46 @@ nav{
 
 #statTime .stat-guide-value,
 #statTime { color: #85c1e9; }
+
+
+.col.weight {
+    background-color: #2d4a3e;
+    border-color: #58d8a3;
+    position: relative;
+}
+
+.weight-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    font-weight: 700;
+    color: #58d8a3;
+    pointer-events: none;
+    line-height: 1;
+}
+
+.icon.weight-icon {
+    background-color: #2d4a3e;
+    border: 1.5px solid #58d8a3;
+    position: relative;
+}
+.icon.weight-icon::after {
+    content: '5';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8px;
+    font-weight: 700;
+    color: #58d8a3;
+}
+
+.guide-hint {
+    font-size: 10px;
+    color: #666;
+    margin-left: 12px;
+    align-self: center;
+    font-style: italic;
+}

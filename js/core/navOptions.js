@@ -90,5 +90,7 @@ export function clearBoard(){
         cell.classList.remove('wall');
         cell.classList.remove('visited');
         cell.classList.remove('path');
+        cell.classList.remove('weight'); // NEW
+        cell.innerHTML = '';             // NEW - removes the "5" label
     })
 }

@@ -2,11 +2,7 @@ import { PriorityQueue } from "../core/util.js";
 import { getPath, isValid } from "../core/util.js";
 import { sourceCoordinate, targetCoordinate, matrix, row, col } from "../core/board.js";
 import { visitedCell } from "../app.js";
-
-
-//---------------------------------------------//
-//    Dijkstra's Algorithms
-//--------------------------------------------//
+import { getWeight } from "../core/interaction.js"; // NEW
 
 export function Dijkstra(){
     const pq = new PriorityQueue();
@@ -23,7 +19,6 @@ export function Dijkstra(){
     distance[sourceCoordinate.x][sourceCoordinate.y] = 0;
     pq.push({coordinate : sourceCoordinate, cost : 0});
 
-
     while(!pq.isEmpty()){
         const {coordinate : frontElement, cost : distanceSoFar} = pq.pop();
         visitedCell.push(matrix[frontElement.x][frontElement.y]);
@@ -34,16 +29,16 @@ export function Dijkstra(){
         }
 
         const neighbourOfFrontElement = [
-            {x: frontElement.x - 1, y:frontElement.y}, //up
-            {x: frontElement.x, y:frontElement.y + 1}, //right
-            {x: frontElement.x + 1, y:frontElement.y}, //down
-            {x: frontElement.x, y:frontElement.y- 1}, //left
+            {x: frontElement.x - 1, y: frontElement.y},
+            {x: frontElement.x,     y: frontElement.y + 1},
+            {x: frontElement.x + 1, y: frontElement.y},
+            {x: frontElement.x,     y: frontElement.y - 1},
         ]
-            
+
         for(const neighbour of neighbourOfFrontElement){
             const currentNeighbour = `${neighbour.x}-${neighbour.y}`;
             if(isValid(neighbour.x, neighbour.y) && !matrix[neighbour.x][neighbour.y].classList.contains('wall')){
-                const edgeWeight = 1;
+                const edgeWeight = getWeight(matrix[neighbour.x][neighbour.y]); // CHANGED
                 const distanceToNeighbour = distanceSoFar + edgeWeight;
 
                 if(distanceToNeighbour < distance[neighbour.x][neighbour.y]){
@@ -53,6 +48,5 @@ export function Dijkstra(){
                 }
             }
         }
-        console.log('Dijkstra Algorithm visualization complete');
     }
 }
