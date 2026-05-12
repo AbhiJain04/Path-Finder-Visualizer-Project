@@ -32,10 +32,15 @@ A clean, interactive web app built with pure JavaScript — no frameworks, no li
 ---
 
 ## 🏗️ Project Structure
+
+```
+Path-Finder-Visualizer-Project/
+│
 ├── index.html
 ├── css/
 │   ├── main.css
 │   └── utility.css
+│
 ├── js/
 │   ├── app.js
 │   ├── stats.js
@@ -44,20 +49,28 @@ A clean, interactive web app built with pure JavaScript — no frameworks, no li
 │   │   ├── navOptions.js
 │   │   └── util.js
 │   └── algorithms/
-│       ├── BFS.js        + BFS.pure.js
-│       ├── DFS.js        + DFS.pure.js
-│       ├── Dijkstra's.js + Dijkstra.pure.js
-│       ├── AStar.js      + AStar.pure.js
-│       └── Greedy.js     + Greedy.pure.js
+│       ├── BFS.js
+│       ├── BFS.pure.js
+│       ├── DFS.js
+│       ├── DFS.pure.js
+│       ├── Dijkstra's.js
+│       ├── Dijkstra.pure.js
+│       ├── AStar.js
+│       ├── AStar.pure.js
+│       ├── Greedy.js
+│       └── Greedy.pure.js
+│
 ├── tests/
 │   ├── BFS.test.js
 │   ├── DFS.test.js
 │   ├── Dijkstra.test.js
 │   ├── AStar.test.js
 │   └── Greedy.test.js
+│
 └── .github/
-└── workflows/
-└── deploy.yml
+    └── workflows/
+        └── deploy.yml
+```
 
 ---
 
