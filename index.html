@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/utility.css">
 </head>
+
 <body>
     <div class="template">
         <header>
@@ -52,37 +54,40 @@
                 </ul>
             </nav>
             <ul class="guideBar">
-                <li>
-                    <span class="icon source"></span>
-                    <span class="text">Start</span>
+                <li><span class="icon source"></span><span class="text">Start</span></li>
+                <li><span class="icon target"></span><span class="text">Target</span></li>
+                <li><span class="icon unvisited"></span><span class="text">Unvisited</span></li>
+                <li><span class="icon visited"></span><span class="text">Visited</span></li>
+                <li><span class="icon wall"></span><span class="text">Wall</span></li>
+                <li><span class="icon path"></span><span class="text">Shortest Path</span></li>
+
+                <li class="guide-divider"></li>
+
+                <li class="stat-guide-item" id="statAlgoItem">
+                    <span class="stat-guide-value" id="statAlgo">—</span>
+                    <span class="text">Algorithm</span>
                 </li>
-                <li>
-                    <span class="icon target"></span>
-                    <span class="text">Target</span>
-                </li>
-                <li>
-                    <span class="icon unvisited"></span>
-                    <span class="text">Unvisited</span>
-                </li>
-                <li>
-                    <span class="icon visited"></span>
+                <li class="stat-guide-item" id="statVisitedItem">
+                    <span class="stat-guide-value" id="statVisited">—</span>
                     <span class="text">Visited</span>
                 </li>
-                <li>
-                    <span class="icon wall"></span>
-                    <span class="text">Wall</span>
+                <li class="stat-guide-item" id="statPathItem">
+                    <span class="stat-guide-value" id="statPath">—</span>
+                    <span class="text">Path Length</span>
                 </li>
-                <li>
-                    <span class="icon path"></span>
-                    <span class="text">Shortest Path</span>
+                <li class="stat-guide-item" id="statTimeItem">
+                    <span class="stat-guide-value" id="statTime">—</span>
+                    <span class="text">Time</span>
                 </li>
             </ul>
         </header>
+
         <div id="board">
 
         </div>
-    </div>   
+    </div>
 </body>
 
 <script type="module" src="js/app.js"></script>
+
 </html>

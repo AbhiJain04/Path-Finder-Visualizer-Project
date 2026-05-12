@@ -166,3 +166,85 @@ nav{
         width: max-content;
     }
 }
+
+
+.stats-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 10px 20px;
+    background-color: #1f1f2e;
+    border-bottom: 1px solid #333;
+    flex-wrap: wrap;
+}
+
+.stats-panel.hidden {
+    display: none;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+#statVisited { color: #58d8a3; }
+#statPath    { color: #f7dc6f; }
+#statTime    { color: #85c1e9; }
+#statAlgo    { color: #f0a500; }
+
+
+.guide-divider {
+    width: 1px;
+    height: 28px;
+    background-color: #444;
+    margin: 0 8px;
+    align-self: center;
+}
+
+.stat-guide-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    opacity: 0.3;                /* dimmed until stats are ready */
+    transition: opacity 0.4s ease;
+}
+
+.stat-guide-item.active {
+    opacity: 1;                  /* full brightness after visualization */
+}
+
+.stat-guide-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1;
+}
+
+#statAlgo    .stat-guide-value,
+#statAlgo { color: #f0a500; }
+
+#statVisited .stat-guide-value,
+#statVisited { color: #58d8a3; }
+
+#statPath .stat-guide-value,
+#statPath { color: #f7dc6f; }
+
+#statTime .stat-guide-value,
+#statTime { color: #85c1e9; }
