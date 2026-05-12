@@ -1,0 +1,27 @@
+{
+  "name": "path-finder-visualizer-project",
+  "version": "1.0.0",
+  "description": "Visualize how pathfinding algorithms work in real-time! A clean, interactive web app built with pure JavaScript to demonstrate Dijkstra's, A*, BFS, DFS and more.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest-cli/bin/jest.js"
+  },
+  "jest": {
+    "transform": {}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhiJain04/Path-Finder-Visualizer-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhiJain04/Path-Finder-Visualizer-Project/issues"
+  },
+  "homepage": "https://github.com/AbhiJain04/Path-Finder-Visualizer-Project#readme",
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
